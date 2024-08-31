@@ -1,0 +1,44 @@
+Header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--light-font);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    width: auto;
+    height: 64px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.header-container {
+    width: 1110px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: fit-content;
+    text-decoration: none;
+}
+
+.logo {
+    width: 35px;
+    height: 35px;
+    margin-right: 7px;
+}
+
+.name {
+    font-size: 22px;
+    font-weight: bold;
+    color: #000000;
+    margin: 0;
+}
