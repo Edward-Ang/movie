@@ -2,7 +2,7 @@ Header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: var(--light-font);
+    background: var(--white);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     width: auto;
     height: 64px;
@@ -39,6 +39,6 @@ Header {
 .name {
     font-size: 22px;
     font-weight: bold;
-    color: #000000;
+    color: var(--black-font);
     margin: 0;
 }

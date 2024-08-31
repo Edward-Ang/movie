@@ -1,0 +1,14 @@
+.homeWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.homeDiv{
+    background-color: var(--white);
+    width: 1110px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center;
+    align-items: center; */
+}

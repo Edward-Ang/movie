@@ -26,6 +26,7 @@ const TopHeader = () => {
           className='custom-search'
           placeholder="input search text"
           onSearch={onSearch}
+          allowClear
           enterButton 
           style={{
             width: 300,

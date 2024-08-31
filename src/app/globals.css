@@ -1,5 +1,7 @@
 :root{
     --background:#090b21;
+    --black-font: #1f1f1f;
+    --white: #ffffff;
     --btn-black: #19242b;
     --glassy-bg: rgba(65, 65, 65, 0.308);
     --grey-bg: rgba(255, 255, 255, 0.2);

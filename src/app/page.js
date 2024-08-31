@@ -1,12 +1,16 @@
 import TopHeader from '@/components/Header/header';
+import Main from '@/components/Main/main';
 import BackToTop from '@/components/BackToTop/backToTop';
+import Footer from '@/components/Footer/footer';
 import styles from './page.module.css';
 
 export default function Home() {
   return (
-    <div className='home-div' style={{height: '500vh'}}>
+    <>
       <TopHeader />
+      <Main />
+      <Footer />
       <BackToTop />
-    </div>
+    </>
   );
 }
