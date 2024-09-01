@@ -1,7 +1,6 @@
 'use client';
 import React, { useState } from "react";
 import { useMediaQuery } from 'react-responsive';
-import "./ReviewCard.css";
 
 const ReviewCard = (props) => {
     const { author_details, content, created_at } = props;

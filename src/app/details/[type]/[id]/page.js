@@ -9,6 +9,7 @@ import {
     fetchReviews
 } from "@/lib/api";
 import TopHeader from "@/components/Header/header";
+import ReviewCard from "@/components/ReviewCard/reviewCard";
 import Footer from "@/components/Footer/footer";
 import { Descriptions } from 'antd';
 import styles from './page.module.css';
@@ -131,7 +132,7 @@ export default function Details({ params }) {
                             <h2>Reviews</h2>
                             <div className="review-list">
                                 <span>test review</span>
-                                {/* {reviews.length > 0 ? (
+                                {reviews.length > 0 ? (
                                     reviews.map((review) => (
                                         <ReviewCard key={review.id} {...review} />
                                     ))
@@ -139,7 +140,7 @@ export default function Details({ params }) {
                                     <div className='no-reviews'>
                                         No reviews
                                     </div>
-                                )} */}
+                                )}
                             </div>
                         </div>
                     </div>
