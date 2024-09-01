@@ -4,10 +4,10 @@ import AspectRatio from 'react-aspect-ratio';
 import { StarFilled } from "@ant-design/icons";
 import './movieCard.css';
 
-const MovieCard = ({ movie, id }) => {
+const MovieCard = ({ movie, type }) => {
   return (
     <div className="movie-card">
-      <Link href={`/movie/${movie.id}/${id}`} className='movie-link'>
+      <Link href={`/details/${type}/${movie.id}`} className='movie-link'>
         <AspectRatio ratio="1/0.675">
           <img
             src={

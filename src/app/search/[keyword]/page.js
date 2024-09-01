@@ -32,7 +32,7 @@ export default function SearchResult({ params }) {
                         </div>
                         <div className={styles.movieContainer}>
                             <div className={styles.movieList}>
-                                {results.map(movie => <MovieCard key={movie.id} movie={movie} id={movie.title ? 'movie' : 'tv'} />)}
+                                {results.map(movie => <MovieCard key={movie.id} movie={movie} type={movie.title ? 'movie' : 'tv'} />)}
                             </div>
                         </div>
                     </div>

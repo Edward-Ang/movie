@@ -21,7 +21,7 @@ export default function Section({ title, items, linkHref, break1275, itemType })
       <div className={styles.movieContainer}>
         <div className={styles.movieList}>
           {items.slice(0, break1275 ? 4 : 5).map((item, index) => (
-            <MovieCard key={item.id || index} movie={item} id={itemType} />
+            <MovieCard key={item.id || index} movie={item} type={itemType} />
           ))}
         </div>
       </div>

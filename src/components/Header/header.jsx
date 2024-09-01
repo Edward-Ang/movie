@@ -29,7 +29,7 @@ const TopHeader = () => {
         </Link>
         <Search
           className='custom-search'
-          placeholder="input search text"
+          placeholder="Search for movies..."
           onSearch={onSearch}
           allowClear
           enterButton 
