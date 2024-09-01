@@ -1,8 +1,7 @@
 .detailWrapper {
     display: flex;
     justify-content: space-between;
-    min-height: 68vh;
-    height: 100%;
+    height: fit-content;
     width: var(--main-width);
     margin: 0 auto;
     padding: 0;
@@ -33,7 +32,7 @@
     border-radius: 12px;
     height: 100%;
     width: 100%;
-    filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.3));
+    filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.3));
 }
 
 .detailContainer {
@@ -52,7 +51,7 @@
 
 .truncateDescription {
     display: -webkit-box;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 3;
     /* Number of lines to show before ellipsis */
     -webkit-box-orient: vertical;
     overflow: hidden;
@@ -84,5 +83,20 @@
 .detailRight {
     width: 30%;
     height: fit-content;
-    background-color: bisque;
+}
+
+.noReviews {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 100%; 
+    height: 185px;
+    border-radius: 12px;
+    border: 1px solid var(--grey-border);
+}
+
+.watchBtn{
+    margin-top: 25px;
 }

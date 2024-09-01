@@ -48,7 +48,7 @@ export default function MovieLists({ params }) {
                         </div>
                         <div className={styles.movieContainer}>
                             <div className={styles.movieList}>
-                                {movies.map(movie => <MovieCard key={movie.id} movie={movie} id={params.id} />)}
+                                {movies.map(movie => <MovieCard key={movie.id} movie={movie} type={params.type} />)}
                             </div>
                         </div>
                     </div>

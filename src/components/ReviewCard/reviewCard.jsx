@@ -1,12 +1,12 @@
 'use client';
 import React, { useState } from "react";
 import { useMediaQuery } from 'react-responsive';
+import { Avatar } from "antd";
+import './reviewCard.css';
 
 const ReviewCard = (props) => {
     const { author_details, content, created_at } = props;
-    const avatarPath = author_details?.avatar_path
-        ? `https://image.tmdb.org/t/p/w500/${author_details.avatar_path}`
-        : "/images/fox-avatar.png";
+    const avatarPath = author_details?.avatar_path ? `https://image.tmdb.org/t/p/w500/${author_details.avatar_path}` : null;
     const [showFullContent, setShowFullContent] = useState(false);
     const formattedDate = new Date(created_at).toLocaleDateString();
     const break480 = useMediaQuery({ maxWidth: 480 });
@@ -23,7 +23,19 @@ const ReviewCard = (props) => {
     return (
         <div className="review-card">
             <div className="review-left">
-                <img src={avatarPath} alt="Author Avatar" className="author-avatar" />
+                {avatarPath ? (
+                    <img src={avatarPath} alt="Author Avatar" className="author-avatar" />
+                ) : (
+                    <Avatar
+                        style={{
+                            width: '42px',
+                            height: '42px',
+                            backgroundColor: 'var(--blue-ant)',
+                        }}
+                    >
+                        {author_details.username[0].toUpperCase()}
+                    </Avatar>
+                )}
             </div>
             <div className="review-right">
                 <div className="author-details">
@@ -32,7 +44,7 @@ const ReviewCard = (props) => {
                         <span className="review-date">{formattedDate}</span>
                     </div>
                     <div className='rating' id='review-rating'>
-                        <span className="rating-score">{author_details.rating !== null ? author_details.rating.toFixed(1) : ''}</span>
+                        <span className="rating-score">{author_details.rating !== null ? author_details.rating.toFixed(1) : 'N/A'}</span>
                         <span className="rating-score-total">/10</span>
                     </div>
                 </div>

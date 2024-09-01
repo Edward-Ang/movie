@@ -2,6 +2,7 @@
     --background:#090b21;
     --black-font: #1f1f1f;
     --grey-font: rgba(0, 0, 0, 0.5);
+    --grey-border: #d9d9d9;
     --white: #ffffff;
     --btn-black: #19242b;
     --glassy-bg: rgba(65, 65, 65, 0.308);
@@ -10,9 +11,11 @@
     --star-icon: #fba80b;
     --blue-font: #00c0ff;
     --blue-bg: #3498db;
+    --blue-ant: #1776ff;
     --blue-bg-hover: #2980b9 ;
     --red-btn: #d32029;
     --red-btn-hover: #e84749;
+    --red-font: #ff4d4f;
     --header-bg: linear-gradient(to bottom, #090b21, #1a1d34);
     --blue-gradient: linear-gradient(135deg, #1dc4e9 0%, #1de9b6  100%);
     --blue-gradient-hover: linear-gradient(135deg, #16a4c8 0%, #16c89a 100%);
