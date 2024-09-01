@@ -1,15 +1,50 @@
 'use client';
 import { useState, useEffect } from "react";
-import { fetchMovieDetails, fetchTvDetails, similarMovies, fetchMovies, fetchTv } from "@/lib/api";
+import {
+    fetchMovieDetails,
+    fetchTvDetails,
+    similarMovies,
+    fetchMovies,
+    fetchTv,
+    fetchReviews
+} from "@/lib/api";
 import TopHeader from "@/components/Header/header";
 import Footer from "@/components/Footer/footer";
+import { Descriptions } from 'antd';
 import styles from './page.module.css';
 
 export default function Details({ params }) {
     const [movie, setMovie] = useState(null);
     const [recommend, setRecommend] = useState([]);
     const [genre, setGenre] = useState([]);
+    const [reviews, setReviews] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const items = [
+        {
+            key: '1',
+            label: 'Description',
+            children: <span className={styles.truncateDescription}>{movie?.overview || 'N/A'}</span>,
+            span: 2,
+        },
+        {
+            key: '2',
+            label: 'Release Date',
+            children: movie?.release_date || movie?.first_air_date,
+            span: 1,
+        },
+        {
+            key: '3',
+            label: 'Rating',
+            children: movie?.vote_average ? movie?.vote_average.toFixed(1) : 'N/A',
+            span: 1,
+        },
+        {
+            key: '4',
+            label: 'Genres',
+            span: 2,
+            children: 'No. 18, Wantang Road, Xihu District, Hangzhou, Zhejiang, China',
+        },
+    ];
 
     useEffect(() => {
         const fetchDetails = async () => {
@@ -43,7 +78,16 @@ export default function Details({ params }) {
             }
         };
 
+        const fetchMovieReviews = async () => {
+            try {
+                setReviews(await fetchReviews(params.id, params.type));
+            } catch {
+                setReviews([]);
+            }
+        };
+
         fetchDetails();
+        fetchMovieReviews();
     }, [params.type, params.id]);
 
     if (isLoading) {
@@ -72,17 +116,30 @@ export default function Details({ params }) {
                             />
                         </div>
                         <div className={styles.detailContainer}>
-                            <h1>{movie.title || movie.name}</h1>
-                            <p className={styles.movieOverview}>{movie.overview}</p>
-                            <p className={styles.movieDate}>Release Date: {movie.release_date || movie.first_air_date}</p>
-                            <div className={styles.movieRating}>
-                                <span>Rating: </span>
-                                <span className={styles.movieDetailRating}>{movie.vote_average ? movie.vote_average.toFixed(1) : 'N/A'}</span>
-                            </div>
-                            <div className={styles.genres}>
-                                {genre.slice(0, 3).map((genreName, index) => (
-                                    <span key={index} className={styles.genreItem}>{genreName === 'Science Fiction' ? 'Sci-Fi' : genreName}</span>
-                                ))}
+                            <Descriptions
+                                className={styles.customDescriptions}
+                                title={movie.title || movie.name}
+                                layout="vertical"
+                                items={items}
+                                size="small"
+                                column={2}
+                            />
+                        </div>
+                    </div>
+                    <div className={styles.detailReview}>
+                        <div className={styles.reviewSection}>
+                            <h2>Reviews</h2>
+                            <div className="review-list">
+                                <span>test review</span>
+                                {/* {reviews.length > 0 ? (
+                                    reviews.map((review) => (
+                                        <ReviewCard key={review.id} {...review} />
+                                    ))
+                                ) : (
+                                    <div className='no-reviews'>
+                                        No reviews
+                                    </div>
+                                )} */}
                             </div>
                         </div>
                     </div>
