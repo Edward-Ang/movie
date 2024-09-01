@@ -6,7 +6,12 @@ import './header.css';
 
 const { Search } = Input;
 
-const onSearch = (value) => console.log(value);
+const onSearch = (value) => {
+  if (!value || value.trim() === '') {
+    return; // Exit the function without performing a search
+  }
+  window.location.href = `/search/${value}`;
+}
 
 const TopHeader = () => {
   return (

@@ -31,32 +31,32 @@ export default function Main() {
 
   return (
     <div className={styles.homeWrapper}>
-      <div className={styles.homeDiv} style={{ height: '200vh' }}>
+      <div className={styles.homeDiv} >
         <Section
           title="Popular Movies"
           items={popularMovies}
-          linkHref="/movies/popular/movie"
+          linkHref="/lists/movie/popular"
           break1275={break1275}
           itemType="movie"
         />
         <Section
           title="Popular TV Shows"
           items={tvShows}
-          linkHref="/movies/popular/tv"
+          linkHref="/lists/tv/popular"
           break1275={break1275}
           itemType="tv"
         />
         <Section
           title="Top Rated TV Shows"
           items={topRatedTvShows}
-          linkHref="/movies/top_rated/tv"
+          linkHref="/lists/tv/top_rated"
           break1275={break1275}
           itemType="tv"
         />
         <Section
           title="Upcoming Movies"
           items={upcomingMovies}
-          linkHref="/movies/upcoming/movie"
+          linkHref="/lists/movie/upcoming"
           break1275={break1275}
           itemType="movie"
         />

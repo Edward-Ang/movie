@@ -14,7 +14,7 @@ Header {
 }
 
 .header-container {
-    width: 1110px;
+    width: var(--main-width);
     margin: 0 auto;
     padding: 0;
     display: flex;

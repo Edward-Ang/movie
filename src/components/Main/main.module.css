@@ -6,9 +6,9 @@
 
 .homeDiv{
     background-color: var(--white);
-    width: 1110px;
+    width: var(--main-width);
     display: flex;
     flex-direction: column;
-    /* justify-content: center;
-    align-items: center; */
+    justify-content: center;
+    align-items: center;
 }

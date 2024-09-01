@@ -6,4 +6,5 @@
 
 .footer p{
     color: var(--black-font);
+    margin-top: 16px;
 }
