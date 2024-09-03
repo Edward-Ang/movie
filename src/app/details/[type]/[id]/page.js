@@ -153,7 +153,7 @@ export default function Details({ params }) {
             <div className={styles.detailWrapper}>
                 <div className={styles.detailLeft}>
                     {watch && (
-                        <div className='detail-video'>
+                        <div className={styles.detailVideo}>
                             {loading &&
                                 <Loader />
                             }
@@ -162,7 +162,7 @@ export default function Details({ params }) {
                                     src={embedUrl}
                                     allowFullScreen
                                     title={movie.title || movie.name}
-                                    className='video-iframe'
+                                    className={styles.videoIframe}
                                     onLoad={() => setLoading(false)}
                                 ></iframe>
                             ) : (
@@ -170,7 +170,7 @@ export default function Details({ params }) {
                                     src={`https://www.youtube.com/embed/${trailer}`}
                                     allowFullScreen
                                     title={movie.title || movie.name}
-                                    className='video-iframe'
+                                    className={styles.videoIframe}
                                     onLoad={() => setLoading(false)}
                                 ></iframe>
                             )}

@@ -100,3 +100,17 @@
 .watchBtn{
     margin-top: 25px;
 }
+
+.detailVideo{
+    width: 100%;
+    padding-right: 25px;
+    padding-bottom: 25px;
+}
+
+.videoIframe{
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+    border-radius: 12px;
+    filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.3));
+}
