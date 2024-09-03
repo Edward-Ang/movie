@@ -9,6 +9,8 @@ function BackToTop() {
                 style={{
                     width: '45px',
                     height: '45px',
+                    right: '50px',
+                    bottom: '100px',
                 }}
             />
         </>

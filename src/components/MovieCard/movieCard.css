@@ -40,7 +40,7 @@
     align-items: center;
     font-size: 14px;
     margin-bottom: 5px;
-    padding: 0 5px 0 5px;
+    /* padding: 0 5px 0 5px; */
     color: var(--black-font);
 }
 
