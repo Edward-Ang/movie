@@ -1,24 +1,18 @@
 'use client';
 import React, { useState } from "react";
 import { useMediaQuery } from 'react-responsive';
-import { Avatar } from "antd";
+import { Avatar, Typography } from "antd";
+import { format } from 'date-fns';
 import './reviewCard.css';
 
 const ReviewCard = (props) => {
     const { author_details, content, created_at } = props;
     const avatarPath = author_details?.avatar_path ? `https://image.tmdb.org/t/p/w500/${author_details.avatar_path}` : null;
-    const [showFullContent, setShowFullContent] = useState(false);
-    const formattedDate = new Date(created_at).toLocaleDateString();
+    // const formattedDate = new Date(created_at).toLocaleDateString();
+    const formattedDate = new Date(created_at).toISOString().split('T')[0]; // Format as YYYY-MM-DD
     const break480 = useMediaQuery({ maxWidth: 480 });
-    const desktopMaxLength = 350;
-    const mobileMaxLength = 150;
-
-    const toggleContent = () => {
-        setShowFullContent(!showFullContent);
-    };
-
-    const truncatedContent = content.slice(0, break480 ? mobileMaxLength : desktopMaxLength);
-    const remainingContent = content.slice(break480 ? mobileMaxLength : desktopMaxLength);
+    const { Paragraph } = Typography;
+    const [ellipsis, setEllipsis] = useState(true);
 
     return (
         <div className="review-card">
@@ -48,20 +42,9 @@ const ReviewCard = (props) => {
                         <span className="rating-score-total">/10</span>
                     </div>
                 </div>
-                <p className="review-content">
-                    {truncatedContent}
-                    {remainingContent && (
-                        <>
-                            {!showFullContent && "..."}
-                            {showFullContent && remainingContent}
-                        </>
-                    )}
-                </p>
-                {remainingContent && (
-                    <button className="read-more-btn" onClick={toggleContent}>
-                        {showFullContent ? "Show less" : "Read more"}
-                    </button>
-                )}
+                <Paragraph ellipsis={ellipsis ? { rows: 3, expandable: true, symbol: 'more' } : false}>
+                    {content}
+                </Paragraph>
             </div>
         </div>
     );
