@@ -246,7 +246,6 @@ import {
     fetchMovies,
     fetchTv,
     fetchReviews,
-    fetchVideos,
 } from "@/lib/api";
 
 export default async function MovieDetailsPage({ params }) {
@@ -279,6 +278,7 @@ export default async function MovieDetailsPage({ params }) {
         recommendations = await similarMovies(type, id);
         if (!recommendations) {
             console.error("Failed to fetch recommendations");
+            recommendations = await (type === 'movie' ? fetchMovies('popular') : fetchTv('popular'));
         }
     } catch (error) {
         console.error("Error fetching recommendations:", error);
