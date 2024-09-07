@@ -42,7 +42,8 @@ const ReviewCard = (props) => {
                         <span className="rating-score-total">/10</span>
                     </div>
                 </div>
-                <Paragraph ellipsis={ellipsis ? { rows: 3, expandable: true, symbol: 'more' } : false}>
+                <Paragraph ellipsis={ellipsis ? { rows: 3, expandable: true, symbol: 'more' } : false}
+                    style={{ textAlign: 'justify' }}>
                     {content}
                 </Paragraph>
             </div>

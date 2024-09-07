@@ -78,3 +78,23 @@
     font-size: 13px;
     font-weight: bold;
 }
+
+@media (max-width: 480px) {
+    .review-card{
+        margin-bottom: 15px;
+    }
+
+    .review-left{
+        margin-right: 10px; 
+    }
+
+    .review-date{
+        margin-top: 0px;
+        margin-left: 5px;
+        font-size: 12px;
+    }
+
+    .author-details{
+        font-size: 12px;
+    }
+}

@@ -1,17 +1,16 @@
 // components/Details.js
 'use client'; // Keep this directive since this component is interactive
-
 import { useState, useEffect } from 'react';
 import TopHeader from '@/components/Header/header';
 import ReviewCard from '@/components/ReviewCard/reviewCard';
 import SideMovieCard from '@/components/SideMovieCard/sideMovieCard';
-import Loader from '@/components/Loader/Loader';
 import Footer from '@/components/Footer/footer';
 import BackToTop from '@/components/BackToTop/backToTop';
 import { Descriptions, Tag, Empty, Button, Spin } from 'antd';
 import { PlayCircleTwoTone } from '@ant-design/icons';
 import { useMediaQuery } from 'react-responsive';
 import { fetchVideos } from '@/lib/api';
+import { isMobile } from 'react-device-detect';
 import styles from './Details.module.css';
 
 export default function Details({ params, movieData, recommendations, reviews }) {
@@ -45,11 +44,11 @@ export default function Details({ params, movieData, recommendations, reviews })
             key: '4',
             label: 'Genres',
             span: 2,
-            children: movieData.genres?.map((genre, index) => (
+            children: movieData.genres?.slice(0, isMobile ? 3 : 5).map((genre, index) => (
                 <Tag key={index} color="blue">
                     {genre.name === 'Science Fiction' ? 'Sci-Fi' : genre.name}
                 </Tag>
-            )) || 'N/A'
+            )) || 'N/A'            
         }
     ];
 
@@ -164,6 +163,19 @@ export default function Details({ params, movieData, recommendations, reviews })
                                 items={items}
                                 size="small"
                                 column={2}
+                                titleStyle={ isMobile ? {
+                                    marginBottom: '0px',
+                                    padding: '0px', 
+                                } : {}}
+                                labelStyle={ isMobile ? {
+                                    fontSize: '12px',
+                                    marginBottom: '-10px',
+                                } : {}}
+                                contentStyle={ isMobile ? {
+                                    margin: '0', 
+                                    padding: '0', 
+                                    fontSize: '12px', 
+                                } : {}}
                             />
                             {trailer &&
                                 <Button

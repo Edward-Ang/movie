@@ -30,7 +30,7 @@
 .detailPoster {
     display: block;
     border-radius: 12px;
-    height: 100%;
+    aspect-ratio: 2 / 3;
     width: 100%;
     filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.3));
 }
@@ -49,16 +49,17 @@
     font-size: x-large;
 }
 
+.customDescriptions :global(.ant-descriptions-header) {
+    margin-bottom: 8px;
+}
+
 .truncateDescription {
     display: -webkit-box;
     -webkit-line-clamp: 3;
-    /* Number of lines to show before ellipsis */
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
     line-height: 1.5;
-
-    /* Adjust based on line height and number of lines */
 }
 
 .genres {
@@ -90,7 +91,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: var(--white);
     width: 100%;
     height: 185px;
     border-radius: 12px;
@@ -114,4 +115,87 @@
     border: none;
     border-radius: 12px;
     filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.3));
+}
+
+@media (max-width: 480px) {
+    .detailWrapper {
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        width: 100%;
+        padding: 3% 3%;
+    }
+
+    .detailLeft {
+        width: 100%;
+    }
+
+    .detailLeftTop {
+        width: 100%;
+        height: fit-content;
+        padding: 0;
+    }
+
+    .posterContainer {
+        width: 35%;
+        height: fit-content;
+    }
+
+    .detailPoster {
+        width: 100%;
+        aspect-ratio: 2 / 3; /* Consistently maintain the same aspect ratio */
+    }
+
+    .detailContainer {
+        display: block;
+        width: 65%;
+        height: 100%;
+        padding: 0;
+        margin-left: 10px;
+    }
+
+    .customDescriptions{
+        width: 100%;
+        margin: 0;
+    }
+
+    .customDescriptions :global(.ant-descriptions-title) {
+        font-size: medium;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .truncateDescription {
+        -webkit-line-clamp: 2;
+    }
+
+    .watchBtn {
+        margin-top: 10px;
+    }
+
+    .detailReview {
+        width: 100%;
+        height: fit-content;
+    }
+
+    .reviewSection {
+        padding: 10px 10px 0 0;
+    }
+
+    .reviewSection h2{
+        font-size: 20px;
+    }
+
+    .detailRight {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .detailRight h2{
+        font-size: 20px;
+    }
+
+    .customDescriptions :global(.ant-descriptions-header) {
+        margin-bottom: 8px;
+    }    
 }
