@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { StarFilled } from "@ant-design/icons";
 import { Card } from 'antd';
+import { isMobile } from "react-device-detect";
 import './movieCard.css';
 import './movieCardMedia.css';
 
@@ -16,8 +17,10 @@ const MovieCard = ({ movie, type }) => {
     >
       <Card
         hoverable
-        style={{
-          width: 225,
+        style={isMobile ? {
+          width: 175,
+        } : {
+          width: 250,
         }}
         cover={
           <img
@@ -32,7 +35,11 @@ const MovieCard = ({ movie, type }) => {
         }
       >
         <Meta
-          title={movie.title ? movie.title : movie.name}
+          title={
+            <span className="movie-title">
+              {movie.title ? movie.title : movie.name}
+            </span>
+          }
           description={
             <div className='movie-subtitle'>
               <span>{movie.release_date !== undefined ? movie.release_date.split('-')[0] : movie.first_air_date !== undefined ? movie.first_air_date.split('-')[0] : 'N/A'}</span>

@@ -1,10 +1,10 @@
-.movieSection{
+.movieSection {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-.sectionHeader{
+.sectionHeader {
     display: flex;
     justify-content: start;
     align-items: center;
@@ -12,28 +12,36 @@
     width: 100%;
 }
 
-.sectionHeaderTitle{
+.sectionHeaderTitle {
     color: var(--black-font);
     margin-top: 30px;
     margin-bottom: 30px;
 }
 
-.moreLink{
+.moreLink {
     text-decoration: none;
 }
 
-.movieContainer{
+.movieContainer {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
 }
 
-.movieList{
+.movieList {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 16px;
     width: min-content;
     justify-items: center;
     align-items: center;
+}
+
+@media (max-width: 480px) {
+    .movieList {
+        grid-template-columns: repeat(2, 2fr);
+        width: 100%;
+        gap: 8px;
+    }
 }

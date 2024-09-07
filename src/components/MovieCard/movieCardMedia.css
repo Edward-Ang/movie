@@ -1,39 +1,22 @@
 @media (max-width: 480px) {
-    .movie-card {
-        width: 90%;
+    .movie-title{
+        font-size: 14px;
     }
 
-    .movie-card img {
-        width: 100%;
+    .movie-subtitle{
+        font-size: 12px;
+        margin-bottom: 0px;
     }
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
-    .movie-card {
-        width: 90%;
-    }
 
-    .movie-card img {
-        width: 100%;
-    }
 }
 
 @media (min-width: 769px) and (max-width: 900px) {
-    .movie-card {
-        width: 90%;
-    }
 
-    .movie-card img {
-        width: 100%;
-    }
 }
 
 @media (min-width: 901px) and (max-width: 1152px) {
-    .movie-card {
-        width: 90%;
-    }
-    
-    .movie-card img {
-        width: 100%;
-    }
+
 }
