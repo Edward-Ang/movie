@@ -3,6 +3,7 @@ import { Input } from 'antd';
 import Link from 'next/link';
 import Image from 'next/image';
 import './header.css';
+import './headerMedia.css';
 
 const { Search } = Input;
 

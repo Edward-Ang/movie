@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { fetchMovies, fetchTv } from '@/lib/api'; 
+import { isMobile, isDesktop, isTablet } from 'react-device-detect';
 import Section from '../Section/section';
 import styles from './main.module.css';
 

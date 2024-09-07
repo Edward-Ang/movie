@@ -121,18 +121,18 @@ export default function Details({ params, movieData, recommendations, reviews })
                                     }}
                                 />
                             )}
-                            {
-                                embedUrl !== '' ? (
-                                    <iframe
-                                        src={embedUrl}
-                                        allowFullScreen
-                                        title={movieData.title || movieData.name}
-                                        className={styles.videoIframe}
-                                        onLoad={() =>
-                                            setLoading(false)
-                                        }
-                                    ></iframe>
-                                ) : (
+                            {/* {
+                                embedUrl !== '' ? ( */}
+                            <iframe
+                                src={embedUrl}
+                                allowFullScreen
+                                title={movieData.title || movieData.name}
+                                className={styles.videoIframe}
+                                onLoad={() =>
+                                    setLoading(false)
+                                }
+                            ></iframe>
+                            {/* ) : (
                                     <iframe
                                         src={`https://www.youtube.com/embed/${trailer}`}
                                         allowFullScreen
@@ -141,7 +141,7 @@ export default function Details({ params, movieData, recommendations, reviews })
                                         onLoad={() => setLoading(false)}
                                     ></iframe>
                                 )
-                            }
+                            } */}
                         </div>
                     )}
                     <div className={styles.detailLeftTop}>

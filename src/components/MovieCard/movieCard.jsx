@@ -1,9 +1,9 @@
 'use client';
 import Link from "next/link";
-// import AspectRatio from 'react-aspect-ratio';
 import { StarFilled } from "@ant-design/icons";
 import { Card } from 'antd';
 import './movieCard.css';
+import './movieCardMedia.css';
 
 const MovieCard = ({ movie, type }) => {
   const { Meta } = Card;
