@@ -1,6 +1,6 @@
 'use client';
 import { FloatButton } from 'antd';
-import isMobile from 'react-device-detect';
+import { isMobile } from 'react-device-detect';
 
 function BackToTop() {
     return (

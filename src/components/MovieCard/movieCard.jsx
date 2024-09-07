@@ -20,7 +20,7 @@ const MovieCard = ({ movie, type }) => {
         style={isMobile ? {
           width: 175,
         } : {
-          width: 250,
+          width: 225,
         }}
         cover={
           <img

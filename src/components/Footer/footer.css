@@ -8,3 +8,11 @@
     color: var(--black-font);
     margin-top: 16px;
 }
+
+@media (max-width: 480px) {
+    .footer p{
+        margin-top: 15px;
+        font-size: 12px;
+    }
+    
+}

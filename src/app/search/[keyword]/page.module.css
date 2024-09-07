@@ -53,3 +53,24 @@
     justify-items: center;
     align-items: center;
 }
+
+@media (max-width: 480px) {
+
+    .sectionHeaderTitle {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        margin-left: 15px;
+        font-size: 18px;
+    }
+
+    .movieList {
+        grid-template-columns: repeat(2, 2fr);
+        width: 100%;
+        gap: 8px;
+    }
+
+    .searchKeyword{
+        font-size: 16px;
+        margin-left: 10px;
+    }
+}
