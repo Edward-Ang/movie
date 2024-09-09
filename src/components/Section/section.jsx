@@ -1,8 +1,7 @@
 'use client';
-import React from 'react';
-import Link from 'next/link';
 import { Button } from 'antd';
 import { RightOutlined } from '@ant-design/icons';
+import Link from 'next/link';
 import MovieCard from '../MovieCard/movieCard';
 import styles from './section.module.css';
 
