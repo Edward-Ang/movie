@@ -7,17 +7,14 @@ import Footer from '@/components/Footer/footer';
 import BackToTop from '@/components/BackToTop/backToTop';
 import { Descriptions, Tag, Empty, Button, Spin } from 'antd';
 import { PlayCircleTwoTone } from '@ant-design/icons';
-import { useMediaQuery } from 'react-responsive';
 import { fetchVideos } from '@/lib/api';
 import styles from './Details.module.css';
 
 export default function Details({ params, movieData, recommendations, reviews }) {
     const [watch, setWatch] = useState(false);
     const [embedUrl, setEmbedUrl] = useState('');
-    const [genre, setGenre] = useState([]);
     const [trailer, setTrailer] = useState(null);
     const [isMobile, setIsMobile] = useState(false); // Local state to manage mobile detection
-    const mobileWidth = useMediaQuery({ maxWidth: 480 });
 
     useEffect(() => {
         // Detect mobile after component is mounted (client-side)

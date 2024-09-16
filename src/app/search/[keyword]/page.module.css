@@ -16,6 +16,7 @@
     font-size: 24px;
     color: var(--grey-font);
     margin-left: 16px;
+    width: fit-content;
 }
 
 .movieSection{
@@ -36,6 +37,7 @@
     color: var(--black-font);
     margin-top: 30px;
     margin-bottom: 30px;
+    width: max-content;
 }
 
 .movieContainer{
@@ -72,5 +74,6 @@
     .searchKeyword{
         font-size: 16px;
         margin-left: 10px;
+        width: 180px;
     }
 }

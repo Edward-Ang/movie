@@ -36,7 +36,7 @@ export default function SearchResult({ params }) {
                             <h2 className={styles.sectionHeaderTitle}>Search Results : </h2>
                             <Text
                                 className={styles.searchKeyword}
-                                style={{ width: 200 }}
+                                // style={{ width: 200 }}
                                 ellipsis={{ tooltip: `${decodedKeyword}` }}
                             >
                                 {decodedKeyword}
