@@ -20,6 +20,7 @@
     --blue-gradient: linear-gradient(135deg, #1dc4e9 0%, #1de9b6  100%);
     --blue-gradient-hover: linear-gradient(135deg, #16a4c8 0%, #16c89a 100%);
     --main-width: 1200px;
+    --tablet-width: 800px;
 }
 
 body{

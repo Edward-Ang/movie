@@ -12,3 +12,9 @@
     justify-content: center;
     align-items: center;
 }
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .homeDiv{
+        width: var(--tablet-width);
+    }
+}

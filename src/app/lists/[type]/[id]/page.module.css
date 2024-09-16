@@ -64,3 +64,13 @@
         gap: 8px;
     }
 }
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .homeDiv{
+        width: var(--tablet-width);
+    }
+
+    .movieList{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
