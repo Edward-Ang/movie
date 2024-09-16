@@ -36,7 +36,7 @@ const MovieCard = ({ movie, type }) => {
       >
         <Meta
           title={
-            <span className="movie-title">
+            <span>
               {movie.title ? movie.title : movie.name}
             </span>
           }

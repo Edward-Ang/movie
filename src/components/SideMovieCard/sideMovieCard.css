@@ -32,12 +32,24 @@
     text-overflow: ellipsis;
 }
 
+#similar-movie-title{
+    padding: 0 5px 0 5px;
+}
+
+.genres{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+}
+
 #similar-movie-subtitle{
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 14px;
     margin-bottom: 5px;
+    padding: 0 5px 0 5px;
     color: var(--black-font);
 }
 

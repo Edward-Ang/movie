@@ -198,4 +198,9 @@
     .customDescriptions :global(.ant-descriptions-header) {
         margin-bottom: 8px;
     }    
+
+    .detailVideo {
+        padding-right: 0px;
+        padding-bottom: 10px;
+    }
 }
