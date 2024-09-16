@@ -1,11 +1,19 @@
 'use client';
+import { useEffect, useState } from 'react';
 import { Button } from 'antd';
 import { RightOutlined } from '@ant-design/icons';
 import Link from 'next/link';
 import MovieCard from '../MovieCard/movieCard';
+import { isMobile as detectMobile } from "react-device-detect";
 import styles from './section.module.css';
 
-export default function Section({ title, items, linkHref, break1275, itemType }) {
+export default function Section({ title, items, linkHref, itemType }) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(detectMobile); // Detect mobile only on the client side
+  }, []);
+
   return (
     <div className={styles.movieSection}>
       <div className={styles.sectionHeader}>
@@ -19,7 +27,7 @@ export default function Section({ title, items, linkHref, break1275, itemType })
       </div>
       <div className={styles.movieContainer}>
         <div className={styles.movieList}>
-          {items.slice(0, break1275 ? 4 : 5).map((item, index) => (
+          {items.slice(0, isMobile ? 4 : 5).map((item, index) => (
             <MovieCard key={item.id || index} movie={item} type={itemType} />
           ))}
         </div>

@@ -1,13 +1,20 @@
 'use client';
+import { useEffect, useState } from 'react';
 import { FloatButton } from 'antd';
-import { isMobile } from 'react-device-detect';
+import { isMobile as detectMobile } from 'react-device-detect';
 
 function BackToTop() {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        setIsMobile(detectMobile); // Detect mobile on the client side
+    }, []);
+
     return (
         <>
             <FloatButton.BackTop
                 type='primary'
-                style={ isMobile ? {
+                style={isMobile ? {
                     width: '45px',
                     height: '45px',
                     right: '10px',
@@ -20,7 +27,7 @@ function BackToTop() {
                 }}
             />
         </>
-    )
+    );
 }
 
 export default BackToTop;

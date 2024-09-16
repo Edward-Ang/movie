@@ -1,4 +1,3 @@
-// components/Details.js
 'use client'; // Keep this directive since this component is interactive
 import { useState, useEffect } from 'react';
 import TopHeader from '@/components/Header/header';
@@ -10,7 +9,6 @@ import { Descriptions, Tag, Empty, Button, Spin } from 'antd';
 import { PlayCircleTwoTone } from '@ant-design/icons';
 import { useMediaQuery } from 'react-responsive';
 import { fetchVideos } from '@/lib/api';
-import { isMobile } from 'react-device-detect';
 import styles from './Details.module.css';
 
 export default function Details({ params, movieData, recommendations, reviews }) {
@@ -18,41 +16,13 @@ export default function Details({ params, movieData, recommendations, reviews })
     const [embedUrl, setEmbedUrl] = useState('');
     const [genre, setGenre] = useState([]);
     const [trailer, setTrailer] = useState(null);
+    const [isMobile, setIsMobile] = useState(false); // Local state to manage mobile detection
     const mobileWidth = useMediaQuery({ maxWidth: 480 });
-    const items = [
-        {
-            key: '1',
-            label: 'Description',
-            children: <span className={styles.truncateDescription}>{movieData?.overview || 'N/A'}</span>,
-            span: 2,
-        },
-        {
-            key: '2',
-            label: 'Release Date',
-            children: movieData?.release_date || movieData?.first_air_date,
-            span: 1,
-        },
-        {
-            key: '3',
-            label: 'Rating',
-            children: <span style={{ color: 'var(--red-font)', fontWeight: 'bold' }}>
-                {movieData?.vote_average ? movieData?.vote_average.toFixed(1) : 'N/A'}
-            </span>,
-            span: 1,
-        },
-        {
-            key: '4',
-            label: 'Genres',
-            span: 2,
-            children: movieData.genres?.slice(0, isMobile ? 3 : 5).map((genre, index) => (
-                <Tag key={index} color="blue">
-                    {genre.name === 'Science Fiction' ? 'Sci-Fi' : genre.name}
-                </Tag>
-            )) || 'N/A'            
-        }
-    ];
 
     useEffect(() => {
+        // Detect mobile after component is mounted (client-side)
+        setIsMobile(window.innerWidth <= 480); 
+
         const fetchVideo = async () => {
             try {
                 const videos = await fetchVideos(params.type, params.id);
@@ -86,7 +56,7 @@ export default function Details({ params, movieData, recommendations, reviews })
 
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    }, []);
 
     const handleWatch = () => {
         setWatch(true);
@@ -99,6 +69,39 @@ export default function Details({ params, movieData, recommendations, reviews })
     if (!movieData) {
         return <div>No movie data available</div>;
     }
+
+    const items = [
+        {
+            key: '1',
+            label: 'Description',
+            children: <span className={styles.truncateDescription}>{movieData?.overview || 'N/A'}</span>,
+            span: 2,
+        },
+        {
+            key: '2',
+            label: 'Release Date',
+            children: movieData?.release_date || movieData?.first_air_date,
+            span: 1,
+        },
+        {
+            key: '3',
+            label: 'Rating',
+            children: <span style={{ color: 'var(--red-font)', fontWeight: 'bold' }}>
+                {movieData?.vote_average ? movieData?.vote_average.toFixed(1) : 'N/A'}
+            </span>,
+            span: 1,
+        },
+        {
+            key: '4',
+            label: 'Genres',
+            span: 2,
+            children: movieData.genres?.slice(0, isMobile ? 3 : 5).map((genre, index) => (
+                <Tag key={index} color="blue">
+                    {genre.name === 'Science Fiction' ? 'Sci-Fi' : genre.name}
+                </Tag>
+            )) || 'N/A'            
+        }
+    ];
 
     return (
         <>
@@ -120,27 +123,13 @@ export default function Details({ params, movieData, recommendations, reviews })
                                     }}
                                 />
                             )}
-                            {/* {
-                                embedUrl !== '' ? ( */}
                             <iframe
                                 src={embedUrl}
                                 allowFullScreen
                                 title={movieData.title || movieData.name}
                                 className={styles.videoIframe}
-                                onLoad={() =>
-                                    setLoading(false)
-                                }
+                                onLoad={() => setLoading(false)}
                             ></iframe>
-                            {/* ) : (
-                                    <iframe
-                                        src={`https://www.youtube.com/embed/${trailer}`}
-                                        allowFullScreen
-                                        title={movieData.title || movieData.name}
-                                        className={styles.videoIframe}
-                                        onLoad={() => setLoading(false)}
-                                    ></iframe>
-                                )
-                            } */}
                         </div>
                     )}
                     <div className={styles.detailLeftTop}>

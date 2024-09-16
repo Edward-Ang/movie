@@ -1,13 +1,19 @@
 'use client';
+import { useEffect, useState } from 'react';
 import Link from "next/link";
 import { StarFilled } from "@ant-design/icons";
 import { Card } from 'antd';
-import { isMobile } from "react-device-detect";
+import { isMobile as detectMobile } from "react-device-detect";
 import './movieCard.css';
 import './movieCardMedia.css';
 
 const MovieCard = ({ movie, type }) => {
   const { Meta } = Card;
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(detectMobile); // Set `isMobile` only on the client side
+  }, []);
 
   return (
     <Link
