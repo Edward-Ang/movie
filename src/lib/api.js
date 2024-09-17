@@ -3,9 +3,9 @@ import axios from 'axios';
 const API_KEY = 'd101d3c09aadebd6fb2d039f413cc1ac';
 const BASE_URL = 'https://api.themoviedb.org/3';
 
-export const fetchMovies = async (type) => {
-  const response = await axios.get(`${BASE_URL}/movie/${type}?api_key=${API_KEY}`);
-  return response.data.results;
+export const fetchMovies = async (type, page = 1) => {
+  const response = await axios.get(`${BASE_URL}/movie/${type}?api_key=${API_KEY}&page=${page}`);
+  return response.data;
 };
 
 export const fetchMovieDetails = async (id) => {
@@ -18,9 +18,9 @@ export const fetchReviews = async (id, type) => {
   return response.data.results;
 }
 
-export const fetchTv = async (type) => {
-  const response = await axios.get(`${BASE_URL}/tv/${type}?api_key=${API_KEY}`);
-  return response.data.results;
+export const fetchTv = async (type, page = 1) => {
+  const response = await axios.get(`${BASE_URL}/tv/${type}?api_key=${API_KEY}&page=${page}`);
+  return response.data;
 };
 
 export const fetchTvDetails = async (id) => {
@@ -28,9 +28,9 @@ export const fetchTvDetails = async (id) => {
   return response.data;
 };
 
-export const searchMovies = async (query) => {
-  const response = await axios.get(`${BASE_URL}/search/multi?api_key=${API_KEY}&query=${query}`);
-  return response.data.results;
+export const searchMovies = async (query, page = 1) => {
+  const response = await axios.get(`${BASE_URL}/search/multi?api_key=${API_KEY}&query=${query}&page=${page}`);
+  return response.data;
 };
 
 export const similarMovies = async (type, id) => {

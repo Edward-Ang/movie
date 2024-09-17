@@ -56,6 +56,13 @@
     align-items: center;
 }
 
+.pageContainer{
+    display: flex;
+    padding-top: 16px;
+    justify-content: end;
+    align-items: center;
+}
+
 @media (max-width: 480px) {
     .sectionHeaderTitle {
         margin-top: 15px;
@@ -74,6 +81,11 @@
         font-size: 16px;
         margin-left: 10px;
         width: 180px;
+    }
+
+    .pageContainer{
+        padding-top: 16px;
+        justify-content: center;
     }
 }
 

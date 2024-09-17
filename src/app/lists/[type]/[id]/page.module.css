@@ -21,7 +21,7 @@
 
 .sectionHeader{
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
     padding: 0 0.5% 0 0.5%;
     width: 100%;
@@ -49,6 +49,13 @@
     align-items: center;
 }
 
+.pageContainer{
+    display: flex;
+    padding-top: 16px;
+    justify-content: end;
+    align-items: center;
+}
+
 @media (max-width: 480px) {
 
     .sectionHeaderTitle {
@@ -62,6 +69,11 @@
         grid-template-columns: repeat(2, 2fr);
         width: 100%;
         gap: 8px;
+    }
+
+    .pageContainer{
+        padding-top: 16px;
+        justify-content: center;
     }
 }
 

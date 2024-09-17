@@ -7,10 +7,10 @@ import { fetchMovies, fetchTv } from '@/lib/api';
 
 export default async function HomePage() {
   // Fetch data on the server
-  const popularMovies = await fetchMovies('popular');
-  const upcomingMovies = await fetchMovies('upcoming');
-  const tvShows = await fetchTv('popular');
-  const topRatedTvShows = await fetchTv('top_rated');
+  const popularMovies = await fetchMovies('popular', 1);
+  const upcomingMovies = await fetchMovies('upcoming', 1);
+  const tvShows = await fetchTv('popular', 1);
+  const topRatedTvShows = await fetchTv('top_rated', 1);
 
   return (
     <>

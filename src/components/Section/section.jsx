@@ -27,7 +27,7 @@ export default function Section({ title, items, linkHref, itemType }) {
       </div>
       <div className={styles.movieContainer}>
         <div className={styles.movieList}>
-          {items.slice(0, isMobile ? 4 : 5).map((item, index) => (
+          {items.results.slice(0, isMobile ? 4 : 5).map((item, index) => (
             <MovieCard key={item.id || index} movie={item} type={itemType} />
           ))}
         </div>
