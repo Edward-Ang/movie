@@ -78,3 +78,17 @@
     color: var(--star-icon);
     margin-left: 4px;
 }
+
+@media (min-width: 481px) and (max-width: 1024px) {
+    .similar-container{
+        width: 400px;
+        height: fit-content;
+        margin-bottom: 15px;
+    }
+
+    .similar-detail{
+        color: var(--black-font);
+        width: 60%;
+        height: 175px;
+    }
+}

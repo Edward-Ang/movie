@@ -194,7 +194,7 @@ export default function Details({ params, movieData, recommendations, reviews })
                 </div>
                 <div className={styles.detailRight}>
                     <h2>You May Also Like</h2>
-                    <div className="side-movie-container">
+                    <div className={styles.sideMovieContainer}>
                         {recommendations.map(movie => (
                             <SideMovieCard key={movie.id} movie={movie} id={params.type} />
                         ))}
